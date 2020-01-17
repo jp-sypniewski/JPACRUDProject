@@ -30,6 +30,7 @@ repositories {
 ext {
   hibernateVersion = "5.4.2.Final"
   mySqlConnectorVersion = "8.0.16"
+  junit5Version = "5.4.2"
 }
 
 // define project specific dependencies
@@ -38,4 +39,10 @@ dependencies {
   compile "log4j:log4j:1.2.17"
   compile "org.hibernate:hibernate-core:$hibernateVersion"
   compile "org.hibernate:hibernate-c3p0:$hibernateVersion"
+  
+  testImplementation("org.junit.jupiter:junit-jupiter:$junit5Version")
+}
+
+test {
+    useJUnitPlatform()
 }
