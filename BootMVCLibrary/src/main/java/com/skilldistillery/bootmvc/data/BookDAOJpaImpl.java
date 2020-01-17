@@ -20,5 +20,11 @@ public class BookDAOJpaImpl implements BookDAO {
 		Book book = em.find(Book.class, id);
 		return book;
 	}
+	
+	@Override
+	public Book updateBook(Book book) {
+		em.persist(book);
+		return book;
+	}
 
 }

@@ -11,7 +11,7 @@
     <class>com.skilldistillery.JPACrudProject.entities.Book</class>
 
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/mydb?useSSL=false&amp;useLegacyDatetimeCode=false&amp;serverTimezone=MST" />
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/librarydb?useSSL=false&amp;useLegacyDatetimeCode=false&amp;serverTimezone=MST" />
       <property name="javax.persistence.jdbc.user" value="libr"/>
       <property name="javax.persistence.jdbc.password" value="booklady" />
       <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />

@@ -1,5 +1,7 @@
 package com.skilldistillery.bootmvc.controllers;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,12 +26,15 @@ public class BookController {
 	@RequestMapping(path = "getBook.do")
 	public String showBook(@RequestParam Integer bid, Model model) {
 		Book book = dao.findById(bid);
-		
 		model.addAttribute("book", book);
-		
-		
-		
 		return "WEB-INF/book/show.jsp";
+	}
+	
+	@RequestMapping(path = "displayUpdate.do")
+	public String displayUpdatePage(HttpSession session) {
+		session.setAttribute("book", session.getAttribute("book"));
+		
+		return "WEB-INF/book/update.jsp";
 	}
 
 }

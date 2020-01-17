@@ -17,7 +17,7 @@ public class Book {
 	
 	private String name;
 	
-	private Integer completed;
+	private Boolean completed;
 	
 	@Column(name="checkin_status")
 	private String checkinStatus;
@@ -38,11 +38,11 @@ public class Book {
 		this.name = name;
 	}
 
-	public Integer getCompleted() {
+	public Boolean getCompleted() {
 		return completed;
 	}
 
-	public void setCompleted(Integer completed) {
+	public void setCompleted(Boolean completed) {
 		this.completed = completed;
 	}
 

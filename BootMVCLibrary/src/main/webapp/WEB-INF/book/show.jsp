@@ -8,7 +8,16 @@
 </head>
 <body>
 <div>
-  <h5>${book.title} (${book.checkinStatus})</h5>
+
+  <h5>${book.name}</h5>
+  <p>Current status: ${book.checkinStatus }</p>
+  <p>Completion: ${book.completed }</p>
+  
+  <form action="displayUpdate.do" method="GET">
+  	<input type="hidden" value="${book.id }" name="bid" />
+  	<input type="submit" value="Update This Book" />
+  </form>
+  
 </div>
 </body>
 </html>
