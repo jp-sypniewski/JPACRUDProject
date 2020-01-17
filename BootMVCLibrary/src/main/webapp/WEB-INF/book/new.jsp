@@ -8,32 +8,20 @@
 <title>Not a public library</title>
 </head>
 <body>
-  <form action="performUpdate.do" method="POST">
-  	<input type="hidden" value="${book.id }" name="id" />
-  	
+  <form action="createNewBook.do" method="POST">  	
   	Name: <input type="text" value="${book.name }" name="name" /><br>
   	
   	Completion Status:<br>
-  	Completed:<input type="radio" name="completed" value="true" 
-  	<c:if test="${book.completed }" >checked</c:if>
-  	/><br>
-  	Incomplete:<input type="radio" name="completed" value="false" 
-  	<c:if test="${not book.completed }" >checked</c:if>
-  	/><br>
+  	Completed:<input type="radio" name="completed" value="true"/><br>
+  	Incomplete:<input type="radio" name="completed" value="false"/><br>
   	
   	Check-In Status:<br>
-  	Available:<input type="radio" name="checkinStatus" value="avail" 
-  	<c:if test="${book.checkinStatus == 'avail' }" >checked</c:if>
-  	/><br>
-  	Reserved:<input type="radio" name="checkinStatus" value="reserved" 
-  	<c:if test="${book.checkinStatus == 'reserved' }" >checked</c:if>
-  	/><br>
-  	Checked Out:<input type="radio" name="checkinStatus" value="out" 
-  	<c:if test="${book.checkinStatus == 'out' }" >checked</c:if>
-  	/><br>
+  	Available:<input type="radio" name="checkinStatus" value="avail"/><br>
+  	Reserved:<input type="radio" name="checkinStatus" value="reserved"/><br>
+  	Checked Out:<input type="radio" name="checkinStatus" value="out"/><br>
   	
   	
-  	<input type="submit" value="Perform Update" />
+  	<input type="submit" value="Create New Book" />
   </form>
 
 </body>

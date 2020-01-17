@@ -8,6 +8,7 @@
 <title>Not a public library</title>
 </head>
 <body>
+<h3>Update book: ${book.name }</h3>
   <form action="performUpdate.do" method="POST">
   	<input type="hidden" value="${book.id }" name="id" />
   	
