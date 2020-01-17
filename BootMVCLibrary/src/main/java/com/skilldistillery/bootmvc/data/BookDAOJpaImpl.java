@@ -23,7 +23,10 @@ public class BookDAOJpaImpl implements BookDAO {
 	
 	@Override
 	public Book updateBook(Book book) {
-		em.persist(book);
+		Book managedBook = em.find(Book.class, book.getId());
+		managedBook.setName(book.getName());
+		managedBook.setCompleted(book.getCompleted());
+		managedBook.setCheckinStatus(book.getCheckinStatus());
 		return book;
 	}
 

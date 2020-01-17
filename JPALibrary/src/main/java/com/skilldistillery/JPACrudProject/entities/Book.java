@@ -21,6 +21,10 @@ public class Book {
 	
 	@Column(name="checkin_status")
 	private String checkinStatus;
+	
+	public Book() {
+		
+	}
 
 	public int getId() {
 		return id;
