@@ -9,7 +9,7 @@
 </head>
 <body>
   <form action="performUpdate.do" method="POST">
-  	<input type="hidden" value="${book.id }" name="bid" />
+  	<input type="hidden" value="${book.id }" name="id" />
   	
   	Name: <input type="text" value="${book.name }" name="name" /><br>
   	
