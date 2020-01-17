@@ -32,7 +32,7 @@ public class BookController {
 	}
 	
 	@RequestMapping(path = "displayUpdate.do")
-	public String displayUpdatePage(HttpSession session, Model model) {
+	public String displayUpdatePage(HttpSession session) {
 		session.setAttribute("book", session.getAttribute("book"));
 		return "WEB-INF/book/update.jsp";
 	}
@@ -56,6 +56,13 @@ public class BookController {
 		session.setAttribute("book", book);
 		
 		return "WEB-INF/book/show.jsp";
+	}
+	
+	@RequestMapping(path="deleteBook.do")
+	public String performDelete(HttpSession session) {
+		boolean deleted = dao.deleteBook((Book)session.getAttribute("book"));
+		session.setAttribute("deleted", deleted);
+		return "WEB-INF/index.jsp";
 	}
 
 }

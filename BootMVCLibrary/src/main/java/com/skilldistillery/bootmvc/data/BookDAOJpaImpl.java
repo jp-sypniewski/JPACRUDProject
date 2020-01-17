@@ -35,5 +35,18 @@ public class BookDAOJpaImpl implements BookDAO {
 		em.persist(book);
 		return book;
 	}
+	
+	@Override
+	public boolean deleteBook(Book book) {
+		
+		
+		em.remove(em.contains(book) ? book : em.merge(book));
+		
+		if (!em.contains(book)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 
 }
