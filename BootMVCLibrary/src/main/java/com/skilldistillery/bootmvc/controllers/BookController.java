@@ -44,5 +44,18 @@ public class BookController {
 		
 		return "WEB-INF/book/show.jsp";
 	}
+	
+	@RequestMapping(path="displayNew.do")
+	public String displayNewPage() {
+		return "WEB-INF/book/new.jsp";
+	}
+	
+	@RequestMapping(path="createNewBook.do", method=RequestMethod.POST)
+	public String performCreation(Book book, HttpSession session) {
+		dao.createBook(book);
+		session.setAttribute("book", book);
+		
+		return "WEB-INF/book/show.jsp";
+	}
 
 }

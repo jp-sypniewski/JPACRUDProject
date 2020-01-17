@@ -17,6 +17,11 @@
   	<input type="hidden" value="${book.id }" name="bid" />
   	<input type="submit" value="Update This Book" />
   </form>
+  <br>
+  <form action="deleteBook.do" method="GET">
+  	<input type="hidden" value="${book.id }" name="bid" />
+  	<input type="submit" value="Delete This Book" />
+  </form>
   
 </div>
 </body>

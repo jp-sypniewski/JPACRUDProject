@@ -11,6 +11,8 @@
   Film ID: <input type="text" name="bid" />
   <input type="submit" value="Show Book" />
 </form>
+<br>
+<a href="displayNew.do">Create New Book</a>
 
 </body>
 </html>

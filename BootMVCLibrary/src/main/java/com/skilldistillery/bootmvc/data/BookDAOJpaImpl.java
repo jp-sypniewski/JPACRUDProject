@@ -29,5 +29,11 @@ public class BookDAOJpaImpl implements BookDAO {
 		managedBook.setCheckinStatus(book.getCheckinStatus());
 		return book;
 	}
+	
+	@Override
+	public Book createBook(Book book) {
+		em.persist(book);
+		return book;
+	}
 
 }
