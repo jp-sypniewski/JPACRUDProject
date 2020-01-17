@@ -21,6 +21,17 @@
   	<c:if test="${not book.completed }" >checked</c:if>
   	/><br>
   	
+  	Check-In Status:<br>
+  	Available:<input type="radio" name="checkinStatus" value="avail" 
+  	<c:if test="${book.checkinStatus == 'avail' }" >checked</c:if>
+  	/><br>
+  	Reserved:<input type="radio" name="checkinStatus" value="reserved" 
+  	<c:if test="${book.checkinStatus == 'reserved' }" >checked</c:if>
+  	/><br>
+  	Checked Out:<input type="radio" name="checkinStatus" value="out" 
+  	<c:if test="${book.checkinStatus == 'out' }" >checked</c:if>
+  	/><br>
+  	
   	
   	<input type="submit" value="Perform Update" />
   </form>

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.skilldistillery.JPACrudProject.entities.Book;
@@ -24,17 +25,24 @@ public class BookController {
 	}
 	
 	@RequestMapping(path = "getBook.do")
-	public String showBook(@RequestParam Integer bid, Model model) {
+	public String showBook(@RequestParam Integer bid, HttpSession session) {
 		Book book = dao.findById(bid);
-		model.addAttribute("book", book);
+		session.setAttribute("book", book);
 		return "WEB-INF/book/show.jsp";
 	}
 	
 	@RequestMapping(path = "displayUpdate.do")
-	public String displayUpdatePage(HttpSession session) {
+	public String displayUpdatePage(HttpSession session, Model model) {
 		session.setAttribute("book", session.getAttribute("book"));
-		
 		return "WEB-INF/book/update.jsp";
+	}
+	
+	@RequestMapping(path="performUpdate.do", method=RequestMethod.POST)
+	public String performUpdate(Book book, HttpSession session) {
+		dao.updateBook(book);
+		session.setAttribute("book", book);
+		
+		return "WEB-INF/book/show.jsp";
 	}
 
 }
