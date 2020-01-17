@@ -1,5 +1,6 @@
 package com.skilldistillery.JPACrudProject.entities;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
 import javax.persistence.EntityManager;
@@ -40,7 +41,8 @@ class BookTest {
 	@Test
 	void test() {
 		Book book = em.find(Book.class, 1);
-		fail("Not yet implemented");
+		assertEquals("first", book.getName());
+		assertEquals("avail", book.getCheckinStatus());
 	}
 
 }
