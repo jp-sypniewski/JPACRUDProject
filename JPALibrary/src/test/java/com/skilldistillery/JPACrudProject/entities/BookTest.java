@@ -1,7 +1,6 @@
 package com.skilldistillery.JPACrudProject.entities;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.fail;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -11,6 +10,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 class BookTest {
@@ -37,7 +37,7 @@ class BookTest {
 	void tearDown() throws Exception {
 		em.close();
 	}
-
+	@DisplayName("testing book mapping entity")
 	@Test
 	void test() {
 		Book book = em.find(Book.class, 1);
