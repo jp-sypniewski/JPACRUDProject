@@ -74,5 +74,37 @@ public class BookController {
 		session.setAttribute("book", sessionBook);
 		return "WEB-INF/book/show.jsp";
 	}
+	
+	@RequestMapping(path="reserveBook.do")
+	public String reserveBook(HttpSession session) {
+		Book sessionBook = (Book) session.getAttribute("book");
+		sessionBook.setCheckinStatus("reserved");
+		dao.updateBook(sessionBook);
+		session.removeAttribute("book");
+		session.setAttribute("book", sessionBook);
+		return "WEB-INF/book/show.jsp";
+	}
+	
+	@RequestMapping(path="checkBookOut.do")
+	public String checkBookOut(HttpSession session) {
+		Book sessionBook = (Book) session.getAttribute("book");
+		sessionBook.setCheckinStatus("out");
+		dao.updateBook(sessionBook);
+		session.removeAttribute("book");
+		session.setAttribute("book", sessionBook);
+		return "WEB-INF/book/show.jsp";
+	}
+	
+	@RequestMapping(path="makeBookAvail.do")
+	public String makeBookAvail(HttpSession session) {
+		Book sessionBook = (Book) session.getAttribute("book");
+		sessionBook.setCheckinStatus("avail");
+		dao.updateBook(sessionBook);
+		session.removeAttribute("book");
+		session.setAttribute("book", sessionBook);
+		return "WEB-INF/book/show.jsp";
+	}
+	
+	
 
 }
