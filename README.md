@@ -22,6 +22,7 @@ This project contains a Spring Boot framework connected to a JPA project such th
 - Tomcat
 - MySQL
 - Gradle
+- Bootstrap CSS
 
 #### Lessons Learned
 
