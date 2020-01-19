@@ -14,11 +14,20 @@
   <p>Current status: ${book.checkinStatus }</p>
   <p>Completion: ${book.completed }</p>
   
-  <form action="displayUpdate.do" method="GET">
-  	<input type="hidden" value="${book.id }" name="bid" />
-  	<input type="submit" value="Update This Book" />
+  <form action="switchCompletionStatus.do" method="GET">
+  	<input type="submit" value="Mark ${book.name } as 
+  	<c:if test="${book.completed }" >Incomplete</c:if>
+  	<c:if test="${not book.completed }" >Complete</c:if>
+  	" />
   </form>
   <br>
+  
+  
+  <form action="displayUpdate.do" method="GET">
+  	<input type="submit" value="Update All Attributes" />
+  </form>
+  <br>
+  
   <form action="deleteBook.do" method="GET">
   	<input type="hidden" value="${book.id }" name="bid" />
   	<input type="submit" value="Delete This Book" />

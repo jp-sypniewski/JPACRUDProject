@@ -64,5 +64,15 @@ public class BookController {
 		session.setAttribute("deleted", deleted);
 		return "WEB-INF/index.jsp";
 	}
+	
+	@RequestMapping(path="switchCompletionStatus.do")
+	public String switchCompletionStatus(HttpSession session) {
+		Book sessionBook = (Book) session.getAttribute("book");
+		sessionBook.setCompleted(!sessionBook.getCompleted());
+		dao.updateBook(sessionBook);
+		session.removeAttribute("book");
+		session.setAttribute("book", sessionBook);
+		return "WEB-INF/book/show.jsp";
+	}
 
 }
