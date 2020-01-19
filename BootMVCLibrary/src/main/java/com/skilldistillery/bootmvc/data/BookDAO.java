@@ -4,9 +4,9 @@ import com.skilldistillery.JPACrudProject.entities.Book;
 
 public interface BookDAO {
 	
+	Book createBook(Book book);
 	Book findById(int id);
 	Book updateBook(Book book);
-	Book createBook(Book book);
 	boolean deleteBook(Book book);
 
 }
