@@ -4,12 +4,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <meta charset="UTF-8">
 <title>Not a public library</title>
 </head>
 <body>
   <form action="createNewBook.do" method="POST">  	
-  	Name: <input type="text" value="${book.name }" name="name" /><br>
+  	Name: <input type="text" name="name" /><br>
   	
   	Completion Status:<br>
   	Completed:<input type="radio" name="completed" value="true"/><br>
