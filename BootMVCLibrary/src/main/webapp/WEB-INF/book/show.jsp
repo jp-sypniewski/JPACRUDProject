@@ -65,6 +65,8 @@
   	<input type="submit" value="Delete This Book" />
   </form>
   
+  <a href="index.do">Home</a>
+  
 </div>
 </body>
 </html>

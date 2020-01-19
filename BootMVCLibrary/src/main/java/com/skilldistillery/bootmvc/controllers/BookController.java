@@ -18,7 +18,7 @@ public class BookController {
 	@Autowired
 	BookDAO dao;
 	
-	@RequestMapping(path="/")
+	@RequestMapping(path= {"/", "index.do"})
 	public String index() {
 	  return "WEB-INF/index.jsp";
 	  // return "index"; // if using a ViewResolver.

@@ -24,6 +24,8 @@
   	
   	<input type="submit" value="Create New Book" />
   </form>
+  
+    <a href="index.do">Home</a>
 
 </body>
 </html>

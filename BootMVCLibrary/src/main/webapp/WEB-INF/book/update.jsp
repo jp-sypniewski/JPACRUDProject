@@ -37,6 +37,8 @@
   	
   	<input type="submit" value="Perform Update" />
   </form>
+  
+    <a href="index.do">Home</a>
 
 </body>
 </html>
