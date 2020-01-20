@@ -10,16 +10,22 @@
 </head>
 <body>
 
+<div>
+<%@ include file="nav.jsp" %>
+</div>
+<div>
 <c:if test="${deleted }">
 <h2>Film Deleted!</h2>
 
 </c:if>
+
+
 <form action="getBook.do" method="GET">
   Film ID: <input type="text" name="bid" />
   <input type="submit" value="Show Book" />
 </form>
 <br>
 <a href="displayNew.do">Create New Book</a>
-
+</div>
 </body>
 </html>
