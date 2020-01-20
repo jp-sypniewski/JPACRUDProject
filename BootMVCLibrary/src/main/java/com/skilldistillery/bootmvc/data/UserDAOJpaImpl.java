@@ -1,11 +1,36 @@
 package com.skilldistillery.bootmvc.data;
 
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
 
-import javax.xml.bind.DatatypeConverter;
+import org.springframework.stereotype.Service;
 
+import com.skilldistillery.JPACrudProject.entities.User;
+
+
+@Transactional
+@Service
 public class UserDAOJpaImpl implements UserDAO {
+	
+	@PersistenceContext
+	private EntityManager em;
+	
+	public User getUserByLogin(String username, String password) {
+		User user = null;
+		
+		String jpql = "select user from User user where username = :username"
+				+ " and password = :password";
+		
+		user = em.createQuery(jpql, User.class).setParameter("username", username)
+				.setParameter("password", password).getResultList().get(0);
+				
+		
+		
+		return user;
+	}
+	
+	
 	
 	
 //	public static void main(String[] args) throws NoSuchAlgorithmException {
