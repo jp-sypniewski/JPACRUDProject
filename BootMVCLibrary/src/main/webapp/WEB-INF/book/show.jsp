@@ -12,7 +12,7 @@
 <div>
 
   <h5>${book.name}</h5>
-  <p>Current status: ${book.checkinStatus }
+  <p>Inventory status: ${book.checkinStatus }
   <c:if test="${book.checkinStatus == 'avail' }">
   	  	<form action="reserveBook.do" method="GET">
   			<input type="submit" value="Reserve Book" />

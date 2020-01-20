@@ -16,7 +16,7 @@
   	Completed:<input type="radio" name="completed" value="true"/><br>
   	Incomplete:<input type="radio" name="completed" value="false"/><br>
   	
-  	Check-In Status:<br>
+  	Inventory Status:<br>
   	Available:<input type="radio" name="checkinStatus" value="avail"/><br>
   	Reserved:<input type="radio" name="checkinStatus" value="reserved"/><br>
   	Checked Out:<input type="radio" name="checkinStatus" value="out"/><br>
