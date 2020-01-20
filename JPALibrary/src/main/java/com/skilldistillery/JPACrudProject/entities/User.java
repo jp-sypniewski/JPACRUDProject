@@ -2,6 +2,7 @@ package com.skilldistillery.JPACrudProject.entities;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,6 +21,7 @@ public class User {
 	
 	private String password;
 	
+	@Column(name = "create_time")
 	private LocalDateTime createTime;
 	
 	private Boolean admin;
