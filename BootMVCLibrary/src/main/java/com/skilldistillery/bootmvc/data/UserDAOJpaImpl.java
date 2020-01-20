@@ -16,6 +16,7 @@ public class UserDAOJpaImpl implements UserDAO {
 	@PersistenceContext
 	private EntityManager em;
 	
+	@Override
 	public User getUserByLogin(String username, String password) {
 		User user = null;
 		

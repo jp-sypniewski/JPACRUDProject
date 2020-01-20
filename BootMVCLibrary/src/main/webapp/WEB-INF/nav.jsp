@@ -8,7 +8,7 @@
 	 
 	<c:choose>
 		<c:when test="${user.id == 0 or user == null}">
-			<a href="login.do">Log In</a>
+			<a href="showLogin.do">Log In</a>
 		</c:when>
 		<c:otherwise>
 			<c:out value="Welcome, ${user.username }"/>

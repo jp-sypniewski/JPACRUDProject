@@ -10,13 +10,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.skilldistillery.JPACrudProject.entities.Book;
+import com.skilldistillery.JPACrudProject.entities.User;
 import com.skilldistillery.bootmvc.data.BookDAO;
+import com.skilldistillery.bootmvc.data.UserDAO;
 
 @Controller
 public class BookController {
 	
 	@Autowired
 	BookDAO dao;
+	@Autowired
+	UserDAO userdao;
 	
 	@RequestMapping(path= {"/", "index.do"})
 	public String index() {
@@ -105,6 +109,29 @@ public class BookController {
 		return "WEB-INF/book/show.jsp";
 	}
 	
+	@RequestMapping(path="showLogin.do")
+	public String showLogin(HttpSession session, Model model) {
+		
+		
+		if (session.getAttribute("user") != null) {
+			return "WEB-INF/index.jsp";
+		} else {
+			model.addAttribute("user", new User());
+			return "WEB-INF/book/login.jsp";
+		}
+		
+	}
+	
+	@RequestMapping(path="login.do", method=RequestMethod.POST)
+	public String logUserIn(User user, HttpSession session) {
+		User loggedInUser = userdao.getUserByLogin(user.getUsername(), user.getPassword());
+		
+		if(loggedInUser != null) {
+			session.setAttribute("user", loggedInUser);
+		}
+		
+		return "redirect:index.do";
+	}
 	
 
 }
