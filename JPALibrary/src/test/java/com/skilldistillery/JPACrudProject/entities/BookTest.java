@@ -41,7 +41,8 @@ class BookTest {
 	@Test
 	void test() {
 		Book book = em.find(Book.class, 1);
-		assertEquals("first", book.getName());
+		assertEquals("first book", book.getName());
+		assertEquals(false, book.getCompleted());
 		assertEquals("avail", book.getCheckinStatus());
 	}
 
