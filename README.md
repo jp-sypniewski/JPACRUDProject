@@ -6,6 +6,8 @@
 
 This project contains a Spring Boot framework connected to a JPA project such that the user can perform CRUD on a single table MySQL database.
 
+The database consists of two tables, with all users able to perform CRUD on only Book objects. A Book has a title (String), completion status (boolean complete, incomplete), and inventory status (avail, reserved, out).  The user is presented with the index screen where a film can be searched by ID, or the user can go to a page with a form to create a new book.  If the user locates a film by searching for ID, then the film title, completion status, and inventory status are all shown.  On that page, the user can update both inventory status and completion status.  The user can also delete the film, or opt to edit all fields of that particular film.
+
 #### Concepts
 
 - MySQL database creation
